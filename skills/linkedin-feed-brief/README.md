@@ -26,9 +26,8 @@ Restart Codex to pick up new skills.
 ### Claude Code
 
 ```bash
-/plugin marketplace add <TODO : Update path>
-
-/plugin install <TODO: update plugin name>
+/plugins marketplace add ZiminPark/oh-zimmy-agent
+/plugins install linkedin-feed-brief
 ```
 
 ## Minimal setup (Playwright MCP Extension Mode)
