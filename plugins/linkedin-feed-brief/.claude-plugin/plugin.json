@@ -2,8 +2,10 @@
   "name": "linkedin-feed-brief",
   "version": "1.0.0",
   "description": "Collect and summarize LinkedIn home feed posts using the Playwright MCP.",
-  "author": "ZiminPark",
-  "readme": "README.md",
+  "author": {
+    "name": "ZiminPark",
+    "url": "https://github.com/ZiminPark"
+  },
   "keywords": [
     "linkedin",
     "feed",

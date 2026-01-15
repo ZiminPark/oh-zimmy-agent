@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "ZiminPark's Claude Code plugin marketplace.",
   "owner": {
-    "name": "ZiminPark"
+    "name": "ZiminPark",
+    "url": "https://github.com/ZiminPark"
   },
   "plugins": [
     {
