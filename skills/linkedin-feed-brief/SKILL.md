@@ -53,9 +53,9 @@ If collection returns 0 or times out:
 
 - Categorize posts using the fixed taxonomy in `references/api_reference.md`.
 - For each category:
-  - `키워드`: 3–7 items, prefixed with a category-appropriate emoji.
-  - Emoji rule: **do not reuse the same emoji across categories within the same brief**.
-    - Example: `🧠 키워드: ...`, `🧰 키워드: ...`, `📈 키워드: ...`
+  - `키워드`: 3–7 items, **plain text only** (no emojis inside the keyword list). Use ` · ` as the separator.
+  - Emoji rule: Put **one** emoji before the `키워드:` label (e.g. `🧠 키워드:`) and **do not reuse** that emoji across categories within the same brief.
+    - Example: `🧠 키워드: k1 · k2 · k3`, `🧰 키워드: k1 · k2 · k3`, `📈 키워드: k1 · k2 · k3`
   - For each post: `핵심 제목` + `핵심 인사이트` + `링크`
 - Use `assets/example_asset.txt` as the output shape.
 
