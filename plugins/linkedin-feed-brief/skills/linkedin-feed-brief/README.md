@@ -26,7 +26,7 @@ Restart Codex to pick up new skills.
 ### Claude Code
 
 ```bash
-/plugins marketplace add ZiminPark/oh-zimmy-agent
+/plugins marketplace add ZiminPark/agent-zym
 /plugins install linkedin-feed-brief
 ```
 
