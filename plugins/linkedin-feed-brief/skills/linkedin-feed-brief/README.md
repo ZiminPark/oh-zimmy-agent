@@ -18,7 +18,7 @@ Use `linkedin-feed-brief` when the user wants to:
 ### Codex
 
 ```bash
-$skill-installer install https://github.com/ZiminPark/oh-zimmy-agent/tree/main/skills/linkedin-feed-brief
+$skill-installer install https://github.com/ZiminPark/agent-zym/tree/main/plugins/linkedin-feed-brief/skills/linkedin-feed-brief
 ```
 
 Restart Codex to pick up new skills.
