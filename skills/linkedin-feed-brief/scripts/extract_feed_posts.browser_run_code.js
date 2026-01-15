@@ -36,7 +36,11 @@ async (page) => {
 
   for (let iter = 0; iter < MAX_ITERS && collected.size < TARGET; iter++) {
     const batch = await page.evaluate(() => {
-      const els = Array.from(document.querySelectorAll("div.occludable-update[data-urn]"));
+      const els = Array.from(
+        document.querySelectorAll(
+          "div.feed-shared-update-v2[data-urn], div.occludable-update[data-urn]"
+        )
+      );
       return els.slice(0, 40).map((root) => {
         const urn = root.getAttribute("data-urn");
 
@@ -95,4 +99,3 @@ async (page) => {
     posts: Array.from(collected.values()).slice(0, TARGET),
   };
 };
-

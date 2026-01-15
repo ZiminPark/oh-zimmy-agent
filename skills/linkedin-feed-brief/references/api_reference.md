@@ -4,7 +4,7 @@ This reference backs the `linkedin-feed-brief` skill.
 
 ## Core selectors (best-effort)
 
-- Post containers: `div.occludable-update[data-urn]`
+- Post containers: `div.feed-shared-update-v2[data-urn]` (current), `div.occludable-update[data-urn]` (older)
 - Feed scroll containers (debug): `main div.scaffold-finite-scroll`, `div.scaffold-finite-scroll__content`
 - Permalink candidates: `a[href*="/feed/update/"]`
 - Text candidates: `div.update-components-text`, `div.feed-shared-update-v2__description`, `span.break-words`
