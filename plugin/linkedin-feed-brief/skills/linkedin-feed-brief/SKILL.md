@@ -80,8 +80,8 @@ If collection returns 0 or times out:
 <Overall Title>
 
 🧩 Category Name
-🧠 Keywords: k1 · k2 · k3 · ...
 
+🧠 Keywords: k1 · k2 · k3 · ...
 1) Title (Author, Posted Date)
 - 1~2 sentence summary
 (link)
@@ -89,8 +89,6 @@ If collection returns 0 or times out:
 2) Title (Author, Posted Date)
 - 1~2 sentence summary
 (link)
-
-------------------------------------------------
 ...
 ```
 
