@@ -29,6 +29,6 @@ ASSISTANT_OUTPUT="${ASSISTANT_OUTPUT:0:200}"
 
 # 알림 전송
 terminal-notifier \
-  -title "hi $DIR_NAME - $NOTIFICATION_TYPE" \
+  -title "$DIR_NAME - $NOTIFICATION_TYPE" \
   -subtitle "$USER_INPUT" \
   -message "$ASSISTANT_OUTPUT"
