@@ -15,7 +15,7 @@ agent-zym is a Claude Code plugin marketplace containing plugins that extend Cla
 ### Current Plugins
 
 1. **linkedin-feed-brief** - Collects and summarizes LinkedIn feed posts using Playwright MCP (Extension Mode)
-2. **notification-hook** - macOS terminal-notifier hook for Claude Code notifications
+2. **terminal-notifier-hook** - macOS terminal-notifier hook for Claude Code notifications
 
 ## Commands
 

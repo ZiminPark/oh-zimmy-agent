@@ -13,9 +13,9 @@
       "source": "./plugins/linkedin-feed-brief"
     },
     {
-      "name": "notification-hook",
+      "name": "terminal-notifier-hook",
       "description": "macOS terminal-notifier hook for Claude Code notifications.",
-      "source": "./plugins/notification-hook"
+      "source": "./plugins/terminal-notifier-hook"
     }
   ]
 }

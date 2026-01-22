@@ -16,7 +16,7 @@ Collect and summarize LinkedIn home feed posts using **Playwright MCP** (Extensi
 - Docs: `plugins/linkedin-feed-brief/skills/linkedin-feed-brief/README.md`
 - Skill instructions: `plugins/linkedin-feed-brief/skills/linkedin-feed-brief/SKILL.md`
 
-### `notification-hook`
+### `terminal-notifier-hook`
 
 Sends macOS terminal notifications when Claude Code processes messages. Displays the current working directory, notification type, user input, and assistant output.
 
@@ -27,7 +27,7 @@ Sends macOS terminal notifications when Claude Code processes messages. Displays
 ```text
 /plugins marketplace add ZiminPark/agent-zym
 /plugins install linkedin-feed-brief
-/plugins install notification-hook
+/plugins install terminal-notifier-hook
 ```
 
 ## Install skill (Codex)
