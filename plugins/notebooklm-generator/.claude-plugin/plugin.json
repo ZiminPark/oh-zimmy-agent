@@ -1,0 +1,21 @@
+{
+  "name": "notebooklm-generator",
+  "version": "1.0.0",
+  "description": "Generate study materials from URLs using NotebookLM.",
+  "author": {
+    "name": "ZiminPark",
+    "url": "https://github.com/ZiminPark"
+  },
+  "keywords": [
+    "notebooklm",
+    "study",
+    "flashcards",
+    "quiz",
+    "infographic",
+    "playwright",
+    "mcp"
+  ],
+  "skills": [
+    "./skills/notebooklm-generator"
+  ]
+}

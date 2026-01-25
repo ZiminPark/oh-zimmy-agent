@@ -16,6 +16,7 @@ agent-zym is a Claude Code plugin marketplace containing plugins that extend Cla
 
 1. **linkedin-feed-brief** - Collects and summarizes LinkedIn feed posts using Playwright MCP (Extension Mode)
 2. **terminal-notifier-hook** - macOS terminal-notifier hook for Claude Code notifications
+3. **notebooklm-generator** - Generates study materials (Flashcards, Quiz, Infographic, Slide Deck) from URLs using NotebookLM with Playwright MCP (Extension Mode)
 
 ## Commands
 
@@ -57,4 +58,5 @@ For `codex/notifier.py`:
 
 - Python 3.14+ required
 - macOS notifications require `terminal-notifier` to be installed
-- The linkedin-feed-brief plugin requires Playwright MCP configured in Extension Mode
+- The linkedin-feed-brief and notebooklm-generator plugins require Playwright MCP configured in Extension Mode
+- The notebooklm-generator plugin requires Google account login in the browser
