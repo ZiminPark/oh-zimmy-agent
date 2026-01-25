@@ -1,6 +1,8 @@
 ---
 name: notebooklm-generator
 description: Generate study materials (Flashcards, Quiz, Infographic, Slide Deck) from a URL using NotebookLM.
+argument-hint: "[url]"
+model: haiku
 allowed-tools: mcp__playwright__browser_navigate, mcp__playwright__browser_click, mcp__playwright__browser_type, mcp__playwright__browser_wait_for, mcp__playwright__browser_snapshot, mcp__playwright__browser_fill_form, mcp__playwright__browser_select_option
 ---
 
@@ -48,6 +50,10 @@ Report to the user that all 4 study materials are being generated:
 - Quiz
 - Infographic
 - Slide Deck
+
+### Step 6: Return Notebook URL
+- Get the current browser URL (it should be in the format `https://notebooklm.google.com/notebook/<notebook-id>`)
+- Return this URL to the user so they can access the notebook directly
 
 ## Example
 

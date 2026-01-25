@@ -46,7 +46,39 @@ Each plugin in `plugins/` contains:
 
 ### Skills
 
-Skills are defined in `SKILL.md` files with YAML frontmatter (name, description) followed by detailed instructions. Reference files go in `references/` and scripts in `scripts/`.
+Skills are defined in `SKILL.md` files with YAML frontmatter followed by detailed instructions.
+
+#### Frontmatter fields:
+- `name` - Skill identifier (becomes `/slash-command`)
+- `description` - What the skill does (Claude uses this to decide when to invoke automatically)
+- `argument-hint` - Optional hint showing expected arguments during autocomplete (e.g., `[url]`, `[filename]`)
+- `allowed-tools` - Tools Claude can use without asking permission (comma-separated list with MCP prefix, e.g., `mcp__playwright__browser_navigate, mcp__playwright__browser_click`)
+
+#### Supporting files:
+- Reference files go in `references/`
+- Scripts go in `scripts/`
+
+### Plugin Versioning
+
+**When to update the version:**
+- Any changes to skill definitions, frontmatter, workflow, or behavior require a version bump
+- Documentation-only changes (README, comments) require a version bump
+- Changes to allowed-tools, argument-hint, or any skill YAML frontmatter require a version bump
+
+**How to update the version:**
+1. Open `plugins/<plugin-name>/.claude-plugin/plugin.json`
+2. Update the `version` field following Semantic Versioning (MAJOR.MINOR.PATCH):
+   - **Patch version** (1.1.x): Documentation updates, configuration refinements, bug fixes
+   - **Minor version** (1.x.0): New skills, new features, significant improvements
+   - **Major version** (x.0.0): Breaking changes, major restructuring
+
+Example:
+```json
+{
+  "name": "notebooklm-generator",
+  "version": "1.1.1"
+}
+```
 
 ## Environment Variables
 

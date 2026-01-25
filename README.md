@@ -22,18 +22,30 @@ Sends macOS terminal notifications when Claude Code processes messages. Displays
 
 - Requires: `terminal-notifier` installed on macOS
 
+### `notebooklm-generator`
+
+Generate study materials (Flashcards, Quiz, Infographic, Slide Deck) from URLs using **Playwright MCP** (Extension Mode).
+
+![NotebookLM Generator Demo](resources/notebook-generator.gif)
+
+- Docs: `plugins/notebooklm-generator/skills/notebooklm-generator/README.md`
+- Skill instructions: `plugins/notebooklm-generator/skills/notebooklm-generator/SKILL.md`
+- Requires: Google account login in browser
+
 ## Install (Claude Code)
 
 ```text
 /plugins marketplace add ZiminPark/agent-zym
 /plugins install linkedin-feed-brief
 /plugins install terminal-notifier-hook
+/plugins install notebooklm-generator
 ```
 
-## Install skill (Codex)
+## Install skills (Codex)
 
 ```bash
 $skill-installer install https://github.com/ZiminPark/agent-zym/tree/main/plugins/linkedin-feed-brief/skills/linkedin-feed-brief
+$skill-installer install https://github.com/ZiminPark/agent-zym/tree/main/plugins/notebooklm-generator/skills/notebooklm-generator
 ```
 
 Restart Codex to pick up new skills.
