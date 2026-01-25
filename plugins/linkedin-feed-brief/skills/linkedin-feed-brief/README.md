@@ -2,7 +2,7 @@
 
 This skill collects and summarizes LinkedIn home feed posts using **Playwright MCP** in **Extension Mode** (browser-based). Extension Mode lets the agent operate inside a real, signed-in Chrome profile (useful for sites like LinkedIn).
 
-Reference: `https://github.com/microsoft/playwright-mcp/blob/main/extension/README.md`
+Reference: [`https://github.com/microsoft/playwright-mcp/blob/main/extension/README.md`](https://github.com/microsoft/playwright-mcp/tree/main/packages/extension)
 
 ## When this skill should run
 
