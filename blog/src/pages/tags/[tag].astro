@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts', ({ data }) => {
+    return data.draft !== true;
+  });
+
+  const uniqueTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags?.includes(tag)
+    ).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout
+  title={`Posts tagged "${tag}" | agent-zym`}
+  description={`All posts tagged with ${tag}`}
+>
+  <div class="space-y-8">
+    <header>
+      <a
+        href="/tags"
+        class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-4"
+      >
+        ← All tags
+      </a>
+      <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+        Posts tagged <span class="text-blue-600 dark:text-blue-400">#{tag}</span>
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400">
+        {posts.length} {posts.length === 1 ? 'post' : 'posts'} found
+      </p>
+    </header>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </div>
+</BaseLayout>

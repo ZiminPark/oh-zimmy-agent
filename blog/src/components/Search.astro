@@ -1,0 +1,81 @@
+---
+---
+
+<div class="relative mb-8">
+  <input
+    type="search"
+    id="search-input"
+    placeholder="Search posts..."
+    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+  />
+  <div id="search-results" class="mt-4 space-y-4 hidden"></div>
+</div>
+
+<script>
+  interface SearchItem {
+    slug: string;
+    title: string;
+    description: string;
+    tags: string[];
+  }
+
+  let searchIndex: SearchItem[] = [];
+
+  // Fetch search index
+  fetch('/search.json')
+    .then((response) => response.json())
+    .then((data) => {
+      searchIndex = data;
+    });
+
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const searchResults = document.getElementById('search-results') as HTMLDivElement;
+
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+
+    if (!query) {
+      searchResults.classList.add('hidden');
+      return;
+    }
+
+    const results = searchIndex.filter((item) => {
+      return (
+        item.title.toLowerCase().includes(query) ||
+        item.description.toLowerCase().includes(query) ||
+        item.tags.some((tag) => tag.toLowerCase().includes(query))
+      );
+    });
+
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p class="text-gray-600 dark:text-gray-400">No results found.</p>';
+      searchResults.classList.remove('hidden');
+      return;
+    }
+
+    searchResults.innerHTML = results
+      .map(
+        (item) => `
+        <a href="/${item.slug}" class="block p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+          <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">${item.title}</h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">${item.description}</p>
+          ${
+            item.tags.length > 0
+              ? `<div class="mt-2 flex flex-wrap gap-2">
+                ${item.tags
+                  .map(
+                    (tag) =>
+                      `<span class="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded">#${tag}</span>`
+                  )
+                  .join('')}
+              </div>`
+              : ''
+          }
+        </a>
+      `
+      )
+      .join('');
+
+    searchResults.classList.remove('hidden');
+  });
+</script>

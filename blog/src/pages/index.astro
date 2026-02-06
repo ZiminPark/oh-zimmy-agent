@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import Search from '../components/Search.astro';
+
+const allPosts = await getCollection('posts', ({ data }) => {
+  return data.draft !== true;
+});
+
+// Sort posts by date, newest first
+const posts = allPosts.sort((a, b) => {
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+});
+---
+
+<BaseLayout
+  title="agent-zym | Claude Code Plugin Marketplace"
+  description="A collection of plugins, skills, and automation tools for Claude Code and Codex"
+>
+  <div class="space-y-8">
+    <section class="text-center py-12">
+      <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+        agent-zym
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Claude Code Plugin Marketplace
+      </p>
+    </section>
+
+    <Search />
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Latest Posts</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {posts.map((post) => <PostCard post={post} />)}
+      </div>
+    </section>
+
+    {posts.length === 0 && (
+      <p class="text-center text-gray-600 dark:text-gray-400">No posts yet. Check back soon!</p>
+    )}
+  </div>
+</BaseLayout>
