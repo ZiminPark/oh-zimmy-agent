@@ -11,6 +11,8 @@ agent-zym is a Claude Code plugin marketplace containing plugins that extend Cla
 - `.claude-plugin/marketplace.json` - Marketplace configuration defining available plugins
 - `plugins/` - Plugin directory, each plugin has its own `.claude-plugin/plugin.json`
 - `codex/` - Helper utilities for Codex integration
+- `requirements/` - Clarified requirements and specifications
+- `blog/` - Astro blog project (deploys to root URL path)
 
 ### Current Plugins
 
